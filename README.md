@@ -9,9 +9,11 @@ The initial position of the hero is in the center of the map. He wins the game i
 
 ## Build
 mvn clean
+
 mvn package
 
 ## Modes
 java -jar target/swingy-1.0-SNAPSHOT.jar console
+
 java -jar target/swingy-1.0-SNAPSHOT.jar gui
 
