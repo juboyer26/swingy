@@ -9,6 +9,7 @@ The initial position of the hero is in the center of the map. He wins the game i
 
 ## Build
 mvn clean
+
 mvn package
 
 ## Modes
