@@ -43,8 +43,8 @@ public class CreateGuiView extends JPanel implements CreateView {
                         + "(5) Mage       45      10      80\n"
                         + "(6) Hunter     25      20      110");
         // this adds to the CreateGuiView panel
-        c.gridx = 0;
-        c.gridy = 1;
+        // c.gridx = 0;
+        // c.gridy = 1;
 
         // a panel to createButtonhold things like a div for the player name and input
         JPanel createHeroPanel = new JPanel();
@@ -58,12 +58,12 @@ public class CreateGuiView extends JPanel implements CreateView {
         classPanel.setVisible(true);
 
         // this adds to the CreateGuiView panel
-        c.gridx = 0;
-        c.gridy = 1;
+        c.gridx = 4;
+        c.gridy = 0;
         this.add(createHeroPanel, c);
 
-        c.gridx = 0;
-        c.gridy = 2;
+        c.gridx = 4;
+        c.gridy = 3;
         this.add(classPanel, c);
 
         c.gridx = 4;
