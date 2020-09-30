@@ -15,5 +15,5 @@ public interface GameView {
 
     void enemyLocation();
 
-    void switchGameView();
+    // void switchGameView();
 }

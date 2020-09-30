@@ -16,11 +16,6 @@ public class GameCliView implements GameView{
     }
 
     @Override
-    public void showInfo(String message) {
-       System.out.println(message);
-    }
-
-    @Override
     public void update(Gameplay game) {
         System.out.println();
         System.out.println("|-----------------------|");
@@ -41,8 +36,8 @@ public class GameCliView implements GameView{
 
     private void getUserInput() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nNORTH, EAST, SOUTH, WEST - to move to this direction and SWITCH to change view");
-        System.out.println("Commands (NORTH, EAST, SOUTH, WEST, SWITCH):");
+        System.out.println("\nNORTH, EAST, SOUTH, WEST - to move to this direction");
+        System.out.println("Commands (NORTH, EAST, SOUTH, WEST):");
         while (scanner.hasNext()) {
             String input = scanner.nextLine();
 
@@ -50,10 +45,11 @@ public class GameCliView implements GameView{
                     || "west".equalsIgnoreCase(input)) {
                 controller.onMove(input);
                 break;
-            } else if ("switch".equalsIgnoreCase(input)) {
-               controller.switchGame();
-               break;
             }
+            // } else if ("switch".equalsIgnoreCase(input)) {
+            //    controller.switchGame();
+            //    break;
+            // }
             else{
                 System.out.println("Unknown command");
             }
@@ -61,27 +57,23 @@ public class GameCliView implements GameView{
         scanner.close();
     }
 
-    @Override
-    public void switchGameView(){
-        new GameGuiView().start();
-    }
-
+    
     @Override
     public void printMap(boolean[][] map, int x, int y) {
         System.out.printf("Map size %dx%d\n", map.length, map.length);
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
                 if (x == j && y == i)
-                    System.out.print("U  ");
+                System.out.print("U  ");
                 else if (map[i][j])
-                    System.out.print("E  ");
+                System.out.print("E  ");
                 else
-                    System.out.print(".  ");
+                System.out.print(".  ");
             }
             System.out.println();
         }
     }
-
+    
     @Override
     public boolean replaceArtifact() {
         Scanner scanner = new Scanner(System.in);
@@ -91,7 +83,7 @@ public class GameCliView implements GameView{
         System.out.println("Commands (LEAVE, REPLACE):");
         while (scanner.hasNext()) {
             String input = scanner.nextLine();
-
+            
             if ("leave".equalsIgnoreCase(input)) {
                 return false;
             } else if ("replace".equalsIgnoreCase(input)) {
@@ -103,11 +95,10 @@ public class GameCliView implements GameView{
         }
         return false;
     }
-
     
     @Override
     public void enemyLocation() {
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("Enemy located choose wisely");
         System.out.println("FIGHT - to fight with villain");
@@ -115,7 +106,7 @@ public class GameCliView implements GameView{
         System.out.println("Commands (FIGHT, RUN):");
         while (scanner.hasNext()) {
             String input = scanner.nextLine();
-
+            
             if ("fight".equalsIgnoreCase(input)) {
                 controller.onFight();
                 break;
@@ -126,6 +117,15 @@ public class GameCliView implements GameView{
                 System.out.println("Unknown command");
             }
         }
-        // scanner.close();
     }
+
+    @Override
+    public void showInfo(String message) {
+       System.out.println(message);
+    }
+
+    // @Override
+    // public void switchGameView(){
+    //     new GameGuiView().start();
+    // }
 }

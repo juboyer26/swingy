@@ -54,7 +54,7 @@ public class CreateHero {
         heroBuilder.setName(name);
         heroBuilder.setAttack(40);
         heroBuilder.setDefence(50);
-        heroBuilder.setHp(130);
+        heroBuilder.setHp(110);
         heroBuilder.setHeroClass("ranger");
         return heroBuilder.getHero();
     }

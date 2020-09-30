@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class initializeGuiGame extends JPanel implements InitializeGame{
-
+    private static final long serialVersionUID = 1L;
     JButton createButton = new JButton("Create Hero");
     JButton selectButton = new JButton("Select Hero");
 

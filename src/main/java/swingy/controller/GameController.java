@@ -44,7 +44,6 @@ public class GameController {
         if (x < 0 || y < 0 || x >= gameplay.getMapSize() || y >= gameplay.getMapSize()) {
             view.showInfo("you win i guess");
             try {
-                // gameplay.getHero().setHp(100);
                 FileWriter fw = new FileWriter("heroes.txt", true);
                 fw.write(gameplay.getHero().getAttack() + " " + gameplay.getHero().getHp() + " "
                         + gameplay.getHero().getDefense() + " " + gameplay.getHero().getExp() + " "
@@ -144,8 +143,8 @@ public class GameController {
         view.update(gameplay);
     }
 
-    public void switchGame() {
-        view.switchGameView();
-    }
+    // public void switchGame() {
+    //     view.switchGameView();
+    // }
 
 }

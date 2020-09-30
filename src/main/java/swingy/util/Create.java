@@ -24,7 +24,7 @@ public class Create {
 
     // method to simulate clearing out the console
     public static void clearConsole() {
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 6; i++)
             System.out.println();
     }
 

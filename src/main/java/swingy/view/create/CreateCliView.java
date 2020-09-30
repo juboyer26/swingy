@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class CreateCliView implements CreateView{
     
     private CreateHeroController controller;
-    //static Scanner scanner = new Scanner(System.in);
 
     // start game
     @Override
@@ -33,7 +32,7 @@ public class CreateCliView implements CreateView{
         System.out.println("(1) Warrior    60      20      120");
         System.out.println("(2) Archer     30      35      100");
         System.out.println("(3) Assassin   25      25      90");
-        System.out.println("(4) Ranger     40      50      130");
+        System.out.println("(4) Ranger     40      50      110");
         System.out.println("(5) Mage       45      10      80");
         System.out.println("(6) Hunter     25      20      110");
         System.out.println("Enter class number: ");
@@ -42,7 +41,7 @@ public class CreateCliView implements CreateView{
             try {
                 int heroClass = scanner.nextInt();
                 System.out.println(
-                        "Command (1) - CREATE Hero: name[" + nameInput + "] and Hero class [" + heroClass + "]");
+                        "Command (1)To create Hero: name [" + nameInput + "] and Hero class [" + heroClass + "]");
                 while (scanner.hasNext()) {
                     int input = scanner.nextInt();
                     try {

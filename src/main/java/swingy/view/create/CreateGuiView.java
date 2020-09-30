@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CreateGuiView extends JPanel implements CreateView {
-
+    private static final long serialVersionUID = 1L;
     private JLabel playerNameLabel = new JLabel("Player name:");
     private JTextField playerNameInput = new JTextField(10);
     private JButton createHeroButton = new JButton("Create Hero");
@@ -39,12 +39,9 @@ public class CreateGuiView extends JPanel implements CreateView {
                         + "(1) Warrior    60      20      120\n"
                         + "(2) Archer     30      35      100\n"
                         + "(3) Assassin   25      25      90\n"
-                        + "(4) Ranger     40      50      130\n"
+                        + "(4) Ranger     40      50      110\n"
                         + "(5) Mage       45      10      80\n"
                         + "(6) Hunter     25      20      110");
-        // this adds to the CreateGuiView panel
-        // c.gridx = 0;
-        // c.gridy = 1;
 
         // a panel to createButtonhold things like a div for the player name and input
         JPanel createHeroPanel = new JPanel();

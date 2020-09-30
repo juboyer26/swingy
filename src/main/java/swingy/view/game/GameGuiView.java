@@ -10,7 +10,7 @@ import swingy.controller.GameController;
 import swingy.model.Gameplay;
 
 public class GameGuiView extends JPanel implements GameView{
-    
+    private static final long serialVersionUID = 1L;
     private GameController controller;
 
     private JEditorPane heroInfo = new JEditorPane();
@@ -56,9 +56,11 @@ public class GameGuiView extends JPanel implements GameView{
         c.gridx = 0;
         c.gridy = 0;
         this.add(heroInfo, c);
+
         c.gridx = 1;
         c.gridy = 0;
         this.add(mapInfo, c);
+        
         c.gridx = 0;
         c.gridy = 3;
         this.add(buttonPanel, c);
@@ -167,10 +169,10 @@ public class GameGuiView extends JPanel implements GameView{
         }
     }
 
-    @Override
-    public void switchGameView(){
-        if(Main.getFrame() != null)
-            Main.getFrame().setVisible(false);
-        new GameCliView().start();
-    }
+    // @Override
+    // public void switchGameView(){1
+    //     if(Main.getFrame() != null)
+    //         Main.getFrame().setVisible(false);
+    //     new GameCliView().start();
+    // }
 }
