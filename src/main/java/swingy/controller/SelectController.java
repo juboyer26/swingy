@@ -45,16 +45,33 @@ public class SelectController {
 		if (!heroes.containsKey(heroNum)) {
 			view.showInfo("No such hero try again :-)");
 		} else {
-			String[] heroData = heroes.get(heroNum).split(" ");
+			// String[] heroData = heroes.get(heroNum).split(" ");
+
+			// \\ -> one or more \s -> whitespace character + -> Matches any string that contains at least one \s
+			String[] heroData = heroes.get(heroNum).split("\\s+");
+
 			Hero hero = null;
-			try {
-				hero = new Hero(nameInput, Integer.parseInt(heroData[0]), Integer.parseInt(heroData[2]),
-						Integer.parseInt(heroData[1]), heroData[5], Integer.parseInt(heroData[4]), 0,
-						Integer.parseInt(heroData[3]), null, null, null);
-				hero.heroValidation();
-			} catch (Exception e) {
-				view.showInfo(e.getMessage());
-				view.userInput();
+			if(heroData.length == 6){
+				try {
+					hero = new Hero(nameInput, Integer.parseInt(heroData[0]), Integer.parseInt(heroData[2]),
+							Integer.parseInt(heroData[1]), heroData[5], Integer.parseInt(heroData[4]), 0,
+							Integer.parseInt(heroData[3]), null, null, null);
+					hero.heroValidation();
+				} catch (Exception e) {
+					if(e.getClass().getSimpleName().equals("NumberFormatException")){
+
+						view.showInfo("Make sure the first 5 parameters are integers");
+						return;
+					}
+					else if(e.getClass().getSimpleName().equals("HeroValidationException")){
+						view.showInfo(e.getMessage());
+						view.userInput();
+						return;
+					}
+				}
+			}
+			else{
+				view.showInfo("Error, select a different Hero.");
 				return;
 			}
 			game.initTheGame(hero);
