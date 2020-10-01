@@ -127,8 +127,9 @@ public class GameController {
 
     public void levelup(int fightExp) {
 
-        int newLevel = (gameplay.getHero().getLevel() * 1000
-                + gameplay.getHero().getLevel() * gameplay.getHero().getLevel() * 450);
+        int newLevel = (gameplay.getHero().getLevel() + 1) * 1000
+                + gameplay.getHero().getLevel() * gameplay.getHero().getLevel() * 450;
+
         if (gameplay.getHero().getExp() + fightExp >= newLevel) {
             gameplay.getHero().setLevel(gameplay.getHero().getLevel() + 1);
             gameplay.getHero().setHp(gameplay.getHero().getHp() + 100);
@@ -142,9 +143,4 @@ public class GameController {
     public void onStartGame() {
         view.update(gameplay);
     }
-
-    // public void switchGame() {
-    //     view.switchGameView();
-    // }
-
 }
