@@ -83,6 +83,7 @@ public class GameController {
         int result = gameplay.getHero().fight(enemy) ? xp : -1;
         if (result >= 0) {
             view.showInfo("You win, and got " + xp + "xp.");
+            gameplay.getHero().setHp(gameplay.getHero().getHp() + 50);
             levelup(xp);
             gameplay.getMap()[gameplay.pointY][gameplay.pointX] = false;
             setArtifact(enemy.getArtifact());
