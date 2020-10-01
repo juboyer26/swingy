@@ -71,7 +71,7 @@ public class SelectController {
 				}
 			} else {
 				view.showInfo("Error, selected data is corupted, try another!.");
-				return;
+				System.exit(1);
 			}
 			game.initTheGame(hero);
 			view.openGame();
